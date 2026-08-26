@@ -15,7 +15,7 @@ inline flag(key: &string) -> argot(bool) {
 inline int-required(key: &string) -> argot(int) {
   (k) => {
     try value = pop-key-value(k, key);
-    let parse-result on value = parse-int(value);
+    let parse-result on value = parse-int@(value);
     match parse-result {
     | Left(_) =>
       Left(Parse-Failure(*key, value))
@@ -28,7 +28,7 @@ inline int-required(key: &string) -> argot(int) {
 inline float-required(key: &string) -> argot(float) {
   (k) => {
     try value = pop-key-value(k, key);
-    let parse-result on value = parse-float(value);
+    let parse-result on value = parse-float@(value);
     match parse-result {
     | Left(_) =>
       Left(Parse-Failure(*key, value))

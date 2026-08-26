@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-neut get argot https://github.com/vekatze/argot/raw/main/archive/0-1-49.tar.zst
+neut get argot https://github.com/vekatze/argot/raw/main/archive/0.2.0.tar.zst
 ```
 
 ## Types
@@ -103,14 +103,14 @@ define pop-head(k: &argot-kit) -> either(error, string)
 
 ```neut
 import {
-  core.either {from-right},
-  core.int.io {print-int},
-  core.list {for},
-  this.argot {argot},
-  this.argot-kit {make-argot-kit-from-argv},
-  this.error {report},
-  this.parse {end-of-input, many, optional},
-  this.preset {flag, int-required, string-required},
+  core::either {from-right},
+  core::int.io {print-int},
+  core::list {for},
+  this::argot {argot},
+  this::argot-kit {make-argot-kit-from-argv},
+  this::error {report},
+  this::parse {end-of-input, many, optional},
+  this::preset {flag, int-required, string-required},
 }
 
 
@@ -164,7 +164,7 @@ define zen() -> unit {
 }
 ```
 
-The parser `my-argument-parser()` can handle arguments like the following:
+The parser `my-argument-parser` can handle arguments like the following:
 
 ```text
 -b --integer 123 -i test -i hoge
